@@ -1,26 +1,26 @@
-#include <stdio.h>   //biblioteca de comunicaÁ„o com o usu·rio
-#include <stdlib.h> //biblioteca de alocaÁ„o de espaÁo em memÛria
-#include <locale.h> //biblioteca de alocaÁıes de texto por regi„o
-#include <string.h> //biblioteca respons·vel por cuidar das string
+#include <stdio.h>   //biblioteca de comunica√ß√£o com o usu√°rio
+#include <stdlib.h> //biblioteca de aloca√ß√£o de espa√ßo em mem√≥ria
+#include <locale.h> //biblioteca de aloca√ß√µes de texto por regi√£o
+#include <string.h> //biblioteca respons√°vel por cuidar das string
 
 int registro()
 {
 	char arquivo[40];
-    char cpf[40];
+        char cpf[40];
 	char nome[40];
 	char sobrenome[40];
 	char cargo[40];
-	int opcao;  // nova vari·vel para controle de repetiÁ„o
+	int opcao;  // nova vari√°vel para controle de repeti√ß√£o
 	
 	do {
 	printf("Digite o cpf a ser cadastrado:");
 	scanf("%s",cpf);
 
-    strcpy(arquivo,cpf); //Respons·vel por copiar os valores das sring
+    strcpy(arquivo,cpf); //Respons√°vel por copiar os valores das sring
     
     FILE*file;  //cria arquivo
     file=fopen(arquivo,"w"); //cria o arquivo
-    fprintf(file,cpf); //salvo o valor da vari·vel                    
+    fprintf(file,cpf); //salvo o valor da vari√°vel                    
     fclose(file); //fecho o arquivo
     
     file=fopen(arquivo,"a");
@@ -56,15 +56,15 @@ int registro()
     fprintf(file,cargo);
     fclose(file);
     
-    printf("\nUsu·rio cadastrado com sucesso\n\n");
+    printf("\nUsu√°rio cadastrado com sucesso\n\n");
     
     printf("Deseja:\n");
-    printf("1 - Adicionar um novo usu·rio\n");
+    printf("1 - Adicionar um novo usu√°rio\n");
     printf("2 - Voltar ao menu principal\n");
-    printf("OpÁ„o: ");
+    printf("Op√ß√£o: ");
     scanf("%d" , &opcao);
     
-} while (opcao == 1); //Repete o cadastro se for escolha do usu·rio
+} while (opcao == 1); //Repete o cadastro se for escolha do usu√°rio
   
     system("pause");
     
@@ -85,12 +85,12 @@ int consulta()
 	
 	if(file == NULL)
 	{
-	printf("N„o foi possivel abrir o arquivo,n„o localizado!.\n");
+	printf("N√£o foi possivel abrir o arquivo,n√£o localizado!.\n");
 	}
 	
 	    while(fgets(conteudo, 200, file) != NULL)
 	{
-		printf("\n Essas s„o as informaÁıes do usu·rio: ");
+		printf("\n Essas s√£o as informa√ß√µes do usu√°rio: ");
 		printf("%s", conteudo);
 		printf("\n\n");
 	}
@@ -100,12 +100,12 @@ int consulta()
 
 int deletar()
 {
-    printf("vocÍ escolheu deletar nomes\n");
+    printf("voc√™ escolheu deletar nomes\n");
   	system("pause");	
 }
 int main ()
     {
-    int opcao=0; //definindo as vari·veis
+    int opcao=0; //definindo as vari√°veis
     int laco=1;
 
     for(laco=1;laco=1;)
@@ -115,14 +115,14 @@ int main ()
 		
 		setlocale (LC_ALL, "portuguese"); //definindo a linguagem
    
-        printf("###cartÛrio da Ebac###\n\n"); //inicio do menu
-        printf("escolha a opÁ„o desejada no menu:\n\n");
+        printf("###cart√≥rio da Ebac###\n\n"); //inicio do menu
+        printf("escolha a op√ß√£o desejada no menu:\n\n");
         printf("\t1 - Resgistrar nomes\n");
         printf("\t2 - Consultar  nomes\n");
         printf("\t3 - Deletar nomes\n");	
-        printf("OpÁ„o: ");    //final do menu
+        printf("Op√ß√£o: ");    //final do menu
    
-        scanf("%d", &opcao); //armazenando a escolha do usu·rio
+        scanf("%d", &opcao); //armazenando a escolha do usu√°rio
   
         system("cls");
   
@@ -136,14 +136,14 @@ int main ()
     	consulta();
   	    break;
   	    
-  	    case 3: 
-		deletar();
-  	    break;
+  	case 3: 
+	deletar();
+  	break;
   	    
-  	    default:
-  	    printf("Esta opÁ„o n„o est· disponivel\n");
-  	    system("pause");
-  	    break;
+   default:
+  	printf("Esta op√ß√£o n√£o est√° disponivel\n");
+        system("pause");
+        break;
   	    	
   }
   
